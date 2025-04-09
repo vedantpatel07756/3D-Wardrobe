@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:wardrope_app/Config.dart';
 
 class ImageSearchPage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _ImageSearchPageState extends State<ImageSearchPage> {
   bool _isLoading = false;
 
   // Replace with your API Key and Custom Search Engine ID
-  final String _apiKey = 'AIzaSyCNbSltZHn39bagk5LvgjnZ7IOFXVcUnT0';
+
   final String _cx = 'b15fdaf8573e9455a';
 
   Future<void> _fetchImages(String query) async {
@@ -22,7 +23,7 @@ class _ImageSearchPageState extends State<ImageSearchPage> {
       _imageUrls = [];
     });
 
-    final String url = 'https://www.googleapis.com/customsearch/v1?q=$query&cx=$_cx&key=$_apiKey&searchType=image&num=10';
+    final String url = 'https://www.googleapis.com/customsearch/v1?q=$query&cx=$_cx&key=${Config.googleapikey}&searchType=image&num=10';
 
     try {
       final response = await http.get(Uri.parse(url));

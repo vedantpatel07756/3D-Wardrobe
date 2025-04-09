@@ -428,7 +428,7 @@ class _ANSWERPageState extends State<Chat2> {
   // CSE variables
   List<String> _imageUrls = [];
   bool _isLoading = false;
-  // final String _apiKey = 'AIzaSyCNbSltZHn39bagk5LvgjnZ7IOFXVcUnT0';
+
   final String _cx = 'b15fdaf8573e9455a';
 
   Future<void> _fetchImages(String query) async {
