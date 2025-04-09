@@ -63,41 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
       result=chunk.text??"Not Fountd";
   });
   }
-  // print(response);
-  // setState(() {
-  //     result=response??"Not Fountd";
-  // });
-
+ 
 
   }
-
-  //  Future<void> fetchData() async {
-  //   final apiKey = Config.apikey; // Replace with your actual API key
-  //   final prompt = "Explain how AI works"; // Replace with your desired prompt
-
-  //   final command = '''curl \\
-  //     -H 'Content-Type: application/json' \\
-  //     -d '{"contents":[{"parts":[{"text":"$prompt"}]}]}' \\
-  //     -X POST 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBuOuVEaniSF5v82YuWlJKV6arxL_F15lU' ''';
-
-  //   // Use a process runner to execute the curl command (for production avoid this in actual app)
-  //   final result = await Process.run('curl', command.split(' '));
-  //   if (result.exitCode == 0) {
-  //     setState(() {
-  //       this.result = utf8.decode(result.stdout);
-  //     });
-  //   } else {
-  //     setState(() {
-  //       this.result = "Error: Failed to execute curl command";
-  //     });
-  //   }
-
-  //   // **For development purpose, you can directly set the response in the UI**
-  //   setState(() {
-  //     this.result = "**Use curl command to test and replace this with the actual response**";
-  //   });
-  // }
-
 
   @override
   Widget build(BuildContext context) {

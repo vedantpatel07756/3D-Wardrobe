@@ -428,7 +428,7 @@ class _ANSWERPageState extends State<Chat2> {
   // CSE variables
   List<String> _imageUrls = [];
   bool _isLoading = false;
-  final String _apiKey = 'AIzaSyCNbSltZHn39bagk5LvgjnZ7IOFXVcUnT0';
+  // final String _apiKey = 'AIzaSyCNbSltZHn39bagk5LvgjnZ7IOFXVcUnT0';
   final String _cx = 'b15fdaf8573e9455a';
 
   Future<void> _fetchImages(String query) async {
@@ -437,7 +437,7 @@ class _ANSWERPageState extends State<Chat2> {
       _imageUrls = [];
     });
 
-    final String url = 'https://www.googleapis.com/customsearch/v1?q=$query&cx=$_cx&key=$_apiKey&searchType=image&num=5'; 
+    final String url = 'https://www.googleapis.com/customsearch/v1?q=$query&cx=$_cx&key=${Config.googleapikey}&searchType=image&num=5'; 
 
     try {
       final response = await http.get(Uri.parse(url));
@@ -467,54 +467,6 @@ class _ANSWERPageState extends State<Chat2> {
     
   ];
 
-  // Future<void> fetchData2(String message, {Uint8List? imageBytes, String? mimeType}) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   String gender = prefs.getString('gender') ?? "Male";
-  //   final apiKey = Config.apikey;
-  //   if (apiKey == null) {
-  //     print('No \$API_KEY environment variable');
-  //     return;
-  //   }
-
-  //   final model = GenerativeModel(
-  //     model: 'gemini-1.5-flash',
-  //     apiKey: apiKey,
-  //     systemInstruction: Content.system('Provide a concise fashion recommendation based on question or Photo Provided with 5 key points (short and crisp) on current trends. Use bullet points to represent. Conclude with 5 relevant fashion-related keywords is compulsory and very important. Keep the last line like "Keywords : ...,...,...,...,... ."'),
-  //   );
-
-  //   history.add(Content.text(message));
-
-  //   if (imageBytes != null && mimeType != null) {
-  //     history.add(Content.data(mimeType, imageBytes));
-  //   }
-
-  //   final chat = model.startChat(history: history);
-  //   setState(() {
-  //     isLoading = true;
-  //   });
-
-  //   var responses = chat.sendMessageStream(Content.text(message));
-  //   String fullResponse = "";
-  //   await for (final response in responses) {
-  //     setState(() {
-  //       fullResponse += response.text?.replaceAll('*', '').trim() ?? "";
-  //     });
-
-  //     history.add(Content.model([TextPart(response.text?.replaceAll('*', '').trim() ?? "")]));
-  //   }
-
-  //   // Find the keywords section
-  //   keywordsSection = fullResponse.substring(fullResponse.indexOf("Keywords:"));
-  //   print(keywordsSection);
-  //   _fetchImages(keywordsSection); // Fetch images based on keywords
-  //   setState(() {
-  //     isLoading = false;
-  //     _messages.add(ChatMessage(
-  //       text: fullResponse,
-  //       isBotMessage: true,
-  //     ));
-  //   });
-  // }
 
 Future<void> fetchData2(String message, {Uint8List? imageBytes, String? mimeType}) async {
   final prefs = await SharedPreferences.getInstance();

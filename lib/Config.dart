@@ -3,6 +3,8 @@ class Config{
 
   // insert apikey of Gemini AI API 
  static  String apikey="your API Key";
+
+ static String googleapikey="your Api Key";
  
    // Define the colors
   static const Color primaryColor = Color(0xFF3F51B5); // Indigo
