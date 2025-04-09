@@ -13,11 +13,7 @@ Also for Google search Engine API Key :  https://developers.google.com/custom-se
 - 👕 **Virtual Try-On** with realistic 3D clothes using Phifud
 - 📸 Upload your own avatar or use a default 3D model
 - 🧥 Browse categories: Tops, Bottoms, Footwear, Accessories
-- 💾 Save favorite outfits to your virtual wardrobe
-- 🛒 Direct links to purchase selected items
-- 🔐 User authentication and profile management
-- 🌐 REST API integration with Flask backend
-- 🗂️ PostgreSQL relational database for structured data
+
 
 ## 🛠️ Tech Stack
 
